@@ -13,20 +13,27 @@ Static 5-page website for **The Digital Experts**, a digital marketing agency ba
 
 ```
 The Digital Experts/
-├── CLAUDE.md
-├── index.html          ← Homepage
-├── about.html          ← About page
-├── services.html       ← Services + pricing
-├── portfolio.html      ← Portfolio + case studies
-├── contact.html        ← Contact form
-└── assets/
-    ├── css/
-    │   └── styles.css  ← All styles (single shared file)
-    └── js/
-        └── main.js     ← All JS skills + init (single shared file)
+├── CLAUDE.md           ← Project instructions (this file)
+├── netlify.toml        ← Netlify config (publish dir = public/)
+└── public/             ← Everything served by Netlify lives here
+    ├── index.html          ← Homepage
+    ├── about.html          ← About page
+    ├── services.html       ← Services + pricing
+    ├── portfolio.html      ← Portfolio + case studies
+    ├── contact.html        ← Contact form
+    └── assets/
+        ├── css/
+        │   └── styles.css  ← All styles (single shared file)
+        ├── js/
+        │   └── main.js     ← All JS skills + init (single shared file)
+        └── images/         ← All image assets go here
 ```
 
-**No loose files in the root directory.** Only HTML pages and CLAUDE.md belong at root level. All CSS goes in `assets/css/`, all JS goes in `assets/js/`, all images go in `assets/images/`. Do not create new files at root without explicit instruction.
+**Root directory rules — strictly enforced:**
+- Only `CLAUDE.md` and `netlify.toml` (and other config files like `.gitignore`) live at root
+- No HTML files at root — all pages go inside `public/`
+- No loose CSS, JS, or image files anywhere outside `public/assets/`
+- Do not create new files at root level without explicit instruction
 
 ---
 
@@ -91,7 +98,7 @@ Hosted on **Netlify** under the Binary team.
 
 To redeploy after changes:
 ```bash
-netlify deploy --prod --dir="." --site="the-digital-experts-in"
+netlify deploy --prod --dir="public" --site="the-digital-experts-in"
 ```
 
 To sync to GitHub after changes:
