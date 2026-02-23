@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — The Digital Experts | Our Work & Case Studies</title>
+  <meta name="description" content="See the results we've delivered — branding, social media campaigns, websites, and performance marketing for businesses across Madhya Pradesh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    /* Case Study Cards */
+    .case-study {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+    .case-study:hover {
+      box-shadow: 0 16px 48px rgba(0,103,255,0.1);
+    }
+    .case-study-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      align-items: stretch;
+    }
+    .case-study.reverse .case-study-inner {
+      grid-template-columns: 1.4fr 1fr;
+    }
+    .case-study-visual {
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+    }
+    .case-study.reverse .case-study-inner .case-study-visual {
+      order: 2;
+    }
+    .case-study.reverse .case-study-inner .case-study-body {
+      order: 1;
+    }
+    .case-study-body { padding: 2.5rem; }
+    .case-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #0067FF;
+      background: #E7F6FF;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .case-study-body h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+    }
+    .case-study-body > p {
+      color: #64748B;
+      font-size: 0.93rem;
+      margin-bottom: 1.5rem;
+    }
+    .case-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: #F8FAFC;
+      border-radius: 12px;
+    }
+    .case-result-item { text-align: center; }
+    .case-result-number {
+      display: block;
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0067FF;
+    }
+    .case-result-label {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+
+    /* Stats comparison */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.25rem;
+      background: #F8FAFC;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .ba-col { text-align: center; }
+    .ba-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+    .ba-before .ba-label { color: #94A3B8; }
+    .ba-after .ba-label  { color: #0067FF; }
+    .ba-number {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .ba-before .ba-number { color: #CBD5E1; }
+    .ba-after .ba-number  { color: #0067FF; }
+    .ba-arrow { font-size: 1.5rem; color: #0067FF; }
+
+    @media (max-width: 768px) {
+      .case-study-inner,
+      .case-study.reverse .case-study-inner { grid-template-columns: 1fr; }
+      .case-study.reverse .case-study-inner .case-study-visual { order: 0; }
+      .case-study.reverse .case-study-inner .case-study-body  { order: 0; }
+      .case-study-visual { min-height: 200px; }
+      .case-results { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://thedigitalexperts.in/wp-content/uploads/2025/09/TDE-LOGO-scaled-140x56.png" alt="The Digital Experts" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <span class="logo-text" style="display:none;">The Digital Experts</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html" class="btn btn-primary">Request Quote</a></li>
+      </ul>
+      <button id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span aria-current="page">Portfolio</span>
+    </nav>
+    <h1>Our Work & Results</h1>
+    <p>Real campaigns, real numbers, real businesses. See what we've built for clients across Madhya Pradesh and beyond.</p>
+  </div>
+</section>
+
+<!-- FILTER + GRID -->
+<section class="portfolio" style="padding-top:5rem;">
+  <div class="container">
+
+    <div class="portfolio-filter reveal" role="group" aria-label="Filter portfolio">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="web">Websites</button>
+      <button class="filter-btn" data-filter="marketing">Performance</button>
+      <button class="filter-btn" data-filter="events">Events</button>
+    </div>
+
+    <div class="portfolio-grid">
+      <article class="portfolio-card reveal" data-category="branding">
+        <div class="portfolio-thumb portfolio-thumb-1">
+          <div class="portfolio-overlay">View Case Study ↓</div>
+          <span aria-hidden="true">🏢</span>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-tag">Corporate Branding</p>
+          <h4>Satna Steel — Full Brand Identity</h4>
+          <p>Logo, brand guidelines, stationery, and positioning for a 20-year-old industrial brand entering the digital age.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal" data-category="social">
+        <div class="portfolio-thumb portfolio-thumb-2">
+          <div class="portfolio-overlay">View Case Study ↓</div>
+          <span aria-hidden="true">📱</span>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-tag">Social Media</p>
+          <h4>MP Travels — 0 to 12K Followers</h4>
+          <p>6-month Instagram & Facebook strategy with content, paid ads, and community management.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal" data-category="web">
+        <div class="portfolio-thumb portfolio-thumb-3">
+          <div class="portfolio-overlay">View Case Study ↓</div>
+          <span aria-hidden="true">🌐</span>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-tag">Website</p>
+          <h4>Vindhya Foods E-Commerce</h4>
+          <p>Full WooCommerce store with product catalogue, payment gateway, and mobile-optimised UX.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal" data-category="events">
+        <div class="portfolio-thumb portfolio-thumb-4">
+          <div class="portfolio-overlay">View Case Study ↓</div>
+          <span aria-hidden="true">🎪</span>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-tag">Event Promotion</p>
+          <h4>Rewa Business Summit 2025</h4>
+          <p>End-to-end digital campaign generating 2,400+ registrations for Central India's biggest business event.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal" data-category="marketing">
+        <div class="portfolio-thumb portfolio-thumb-5">
+          <div class="portfolio-overlay">View Case Study ↓</div>
+          <span aria-hidden="true">📊</span>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-tag">Performance Marketing</p>
+          <h4>Jabalpur Homes — 3.8x ROI</h4>
+          <p>Google + Meta Ads for a real estate developer. 340 qualified leads at ₹180 CPL.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal" data-category="branding">
+        <div class="portfolio-thumb portfolio-thumb-6">
+          <div class="portfolio-overlay">View Case Study ↓</div>
+          <span aria-hidden="true">📸</span>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-tag">Photography</p>
+          <h4>Central India Co. Product Shoot</h4>
+          <p>200+ high-res product images for e-commerce and social — shot and delivered in 48 hours.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES (detailed) -->
+<section style="padding:5rem 0 7rem; background:#F8FAFC;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Case Studies</span>
+      <h2>The Numbers Behind the Work</h2>
+      <p>Selected in-depth case studies showing our process, decisions, and the measurable results we delivered.</p>
+    </div>
+
+    <!-- Case Study 1 -->
+    <div class="case-study reveal">
+      <div class="case-study-inner">
+        <div class="case-study-visual" style="background:linear-gradient(135deg,#0067FF,#60A5FA);">
+          <span aria-hidden="true">📱</span>
+        </div>
+        <div class="case-study-body">
+          <span class="case-tag">Social Media Marketing</span>
+          <h3>MP Travels & Tourism — Instagram Growth Campaign</h3>
+          <p>MP Travels came to us with 900 Instagram followers, inconsistent posting, and no clear content strategy. Their goal: become the go-to travel brand for MP destinations on social media.</p>
+
+          <div class="before-after">
+            <div class="ba-col ba-before">
+              <p class="ba-label">Before</p>
+              <p class="ba-number">900</p>
+              <p style="font-size:0.8rem; color:#94A3B8;">Followers</p>
+            </div>
+            <div class="ba-arrow" aria-hidden="true">→</div>
+            <div class="ba-col ba-after">
+              <p class="ba-label">After 6 Months</p>
+              <p class="ba-number">12,000</p>
+              <p style="font-size:0.8rem; color:#0067FF;">Followers</p>
+            </div>
+          </div>
+
+          <div class="case-results">
+            <div class="case-result-item">
+              <span class="case-result-number">1,233%</span>
+              <span class="case-result-label">Follower Growth</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-number">4.8%</span>
+              <span class="case-result-label">Avg Engagement Rate</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-number">380+</span>
+              <span class="case-result-label">Enquiries Generated</span>
+            </div>
+          </div>
+
+          <p style="font-size:0.88rem; color:#64748B; font-style:italic; margin-bottom:1.25rem;">"Best digital marketing investment we've made. Our Instagram is now our biggest source of new bookings." — Priya Mishra, Founder</p>
+          <a href="contact.html" class="btn btn-primary">Get Similar Results</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 2 -->
+    <div class="case-study reverse reveal">
+      <div class="case-study-inner">
+        <div class="case-study-body">
+          <span class="case-tag">Performance Marketing</span>
+          <h3>Jabalpur Homes — Real Estate Lead Generation</h3>
+          <p>A real estate developer launching a new residential project needed qualified leads — not just clicks. We built a full-funnel Google + Meta Ads campaign with custom landing pages and lead qualification.</p>
+
+          <div class="case-results">
+            <div class="case-result-item">
+              <span class="case-result-number">340</span>
+              <span class="case-result-label">Qualified Leads</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-number">₹180</span>
+              <span class="case-result-label">Cost Per Lead</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-number">3.8x</span>
+              <span class="case-result-label">Return on Ad Spend</span>
+            </div>
+          </div>
+
+          <div style="padding:1.25rem; background:#F8FAFC; border-radius:12px; margin-bottom:1.5rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.75rem; color:#0F172A;">What We Did:</h4>
+            <div class="service-features">
+              <div class="feature-item"><span class="feature-dot"></span> Custom landing page with lead capture form</div>
+              <div class="feature-item"><span class="feature-dot"></span> Google Search Ads targeting high-intent keywords</div>
+              <div class="feature-item"><span class="feature-dot"></span> Meta Ads with retargeting + lookalike audiences</div>
+              <div class="feature-item"><span class="feature-dot"></span> A/B tested 6 ad creatives, 3 landing page variants</div>
+              <div class="feature-item"><span class="feature-dot"></span> WhatsApp lead nurture sequence post-enquiry</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Start a Campaign</a>
+        </div>
+        <div class="case-study-visual" style="background:linear-gradient(135deg,#059669,#34D399);">
+          <span aria-hidden="true">📊</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 3 -->
+    <div class="case-study reveal">
+      <div class="case-study-inner">
+        <div class="case-study-visual" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);">
+          <span aria-hidden="true">🌐</span>
+        </div>
+        <div class="case-study-body">
+          <span class="case-tag">Website Development</span>
+          <h3>Vindhya Foods — E-Commerce Launch</h3>
+          <p>A local food brand wanted to sell online. We designed and built their WooCommerce store from scratch — including photography, product copywriting, payment integration, and SEO setup.</p>
+
+          <div class="case-results">
+            <div class="case-result-item">
+              <span class="case-result-number">₹8L+</span>
+              <span class="case-result-label">Revenue Month 1</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-number">2.1s</span>
+              <span class="case-result-label">Page Load Speed</span>
+            </div>
+            <div class="case-result-item">
+              <span class="case-result-number">4.2%</span>
+              <span class="case-result-label">Conversion Rate</span>
+            </div>
+          </div>
+
+          <div style="padding:1.25rem; background:#F8FAFC; border-radius:12px; margin-bottom:1.5rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.75rem; color:#0F172A;">Delivered In 3 Weeks:</h4>
+            <div class="service-features">
+              <div class="feature-item"><span class="feature-dot"></span> Custom WordPress + WooCommerce design</div>
+              <div class="feature-item"><span class="feature-dot"></span> 40+ product pages with SEO-optimised copy</div>
+              <div class="feature-item"><span class="feature-dot"></span> Razorpay + UPI payment integration</div>
+              <div class="feature-item"><span class="feature-dot"></span> Professional product photography (60 images)</div>
+              <div class="feature-item"><span class="feature-dot"></span> GST invoice automation & order management</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Build My Website</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Client Feedback</span>
+      <h2>Straight from Our Clients</h2>
+    </div>
+    <div class="testimonials-grid">
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"They don't just run campaigns — they become invested in your business. The team understood our market better than agencies we'd used before with much bigger budgets."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar avatar-1">RK</div>
+          <div>
+            <p class="author-name">Rajesh Kumar</p>
+            <p class="author-role">MD, Satna Steel Industries</p>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The website they built for us loads incredibly fast, looks stunning, and has a 4%+ conversion rate right out of the gate. Worth every rupee and then some."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar avatar-3">AS</div>
+          <div>
+            <p class="author-name">Aditya Shrivastava</p>
+            <p class="author-role">CEO, Vindhya Foods Pvt. Ltd.</p>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"2,400 event registrations from our digital campaign — a record for our summit. The team's creativity and execution was flawless. We'll use them for every event going forward."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar avatar-4">MV</div>
+          <div>
+            <p class="author-name">Mahesh Verma</p>
+            <p class="author-role">Organiser, Rewa Business Summit</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <span class="section-label" style="background:rgba(255,255,255,0.15); color:#fff;">Your Project Next</span>
+      <h2>Let's Create Your Success Story</h2>
+      <p>Ready to see results like these? Book a free 30-minute strategy call and let's talk about what's possible for your business.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white btn-lg">Book a Free Meeting</a>
+        <a href="services.html" class="btn btn-lg" style="color:#fff; border:2px solid rgba(255,255,255,0.35);">Our Services →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://thedigitalexperts.in/wp-content/uploads/2025/09/TDE-LOGO-scaled-140x56.png" alt="The Digital Experts" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <p class="brand-name" style="display:none;">The Digital Experts</p>
+        <p>Satna's leading digital marketing agency — helping businesses across Madhya Pradesh build powerful online presences and generate real, measurable growth.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">in</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">li</a>
+          <a href="#" class="social-link" aria-label="YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#branding">Corporate Branding</a></li>
+          <li><a href="services.html#social">Social Media</a></li>
+          <li><a href="services.html#web">Website Design</a></li>
+          <li><a href="services.html#marketing">Performance Marketing</a></li>
+          <li><a href="services.html#events">Event Promotion</a></li>
+          <li><a href="services.html#photography">Photography</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get In Touch</h5>
+        <div class="footer-contact">
+          <div class="contact-item"><span class="contact-item-icon">📍</span><span>488, Birla Road, Satna, MP – 485001</span></div>
+          <div class="contact-item"><span class="contact-item-icon">📞</span><a href="tel:+919770952684">+91 97709 52684</a></div>
+          <div class="contact-item"><span class="contact-item-icon">✉️</span><a href="mailto:contact@thedigitalexperts.in">contact@thedigitalexperts.in</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The Digital Experts. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
